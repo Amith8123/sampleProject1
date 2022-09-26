@@ -22,8 +22,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.BeforeStep;
 public class TeamRCB {
-	  
-   RcbValidator rc=new RcbValidator();
+	   RcbValidator rc=new RcbValidator();
 
    final static Logger log = Logger.getLogger("devpinoyLogger");
 @Given("The team RCB has submitted its team for an upcoming match")
@@ -51,33 +50,5 @@ public void verify_there_one_wicket_keeper() {
  
 }
 
-@When("enter the username {string} and {string}")
-public void enter_the_username_and(String username, String password) {
-    // Write code here that turns the phrase above into concrete actions
-	
-    
-}
-
-@When("user click login in button")
-public void user_click_login_in_button() {
-    // Write code here that turns the phrase above into concrete actions
-
-   
-}
-
-@Then("verify user logged in successfully")
-public void verify_user_logged_in_successfully() {
-    // Write code here that turns the phrase above into concrete actions
-
-   
-}
-
-@Then("verify error message displayed when username or password incorrect")
-public void verify_error_message_displayed_when_username_or_password_incorrect() {
-	
-    // Write code here that turns the phrase above into concrete actions
-
-    
-}
     
 }

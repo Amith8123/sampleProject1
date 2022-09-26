@@ -13,13 +13,13 @@ import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
 import utility.UtilityHelper;
 
-
 public class BeforeClass {
-	
+
 	private String scenDesc;
 	public static Properties prop = new Properties();
 	public static Properties log4jprop = new Properties();
 	final static Logger log = Logger.getLogger("devpinoyLogger");
+	public static String jsonPath;
 	
 	 @Before
 		public void before(Scenario scenario) {
@@ -29,11 +29,18 @@ public class BeforeClass {
 	 		    		log4jprop.load(new FileInputStream("./src/test/resources/config/log4j.properties"));	
 	 		    		PropertyConfigurator.configure(log4jprop);
 	 		    		
+	 		    		jsonPath=prop.getProperty("Jsonpath");
+	 		    		
 	 		    	} catch (IOException e) {
 	 					e.printStackTrace();
 	 				}
 	 			}
 	 			
+	 public static String getJsonPath()
+	 {
+		 return jsonPath;
+	 }
+	 
 			
 			
 		
@@ -45,8 +52,6 @@ public class BeforeClass {
 	  }
 		
 		
-	
-	
-	 
+		 
 
 }

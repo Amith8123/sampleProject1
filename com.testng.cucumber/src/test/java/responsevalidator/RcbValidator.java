@@ -1,11 +1,10 @@
 package responsevalidator;
-
 import static org.testng.Assert.assertEquals;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.json.simple.JSONArray;
@@ -13,19 +12,20 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
+import stepdefs.BeforeClass;
 
+import java.io.FileReader;
 
 public class RcbValidator {
 	JSONArray player;
 	   final static Logger log = Logger.getLogger("devpinoyLogger");
-		    
+	   public static Properties prop = new Properties();
 	
 	  public void getJsonFile() throws ParseException, IOException {
 		 JSONParser jsonparser=new JSONParser();
 		  log.info("Getting the json file from project folder");
-		  FileReader file=new FileReader(".\\src\\test\\resources\\json\\TeamRCB.json");
-		
+				  FileReader file=new FileReader("."+BeforeClass.jsonPath);
+		  log.info("Json file present in the path... " + BeforeClass.jsonPath);		
 		  Object obj=jsonparser.parse(file);
 		  JSONObject rcb=(JSONObject)obj;
 		String location=  (String) rcb.get("location");

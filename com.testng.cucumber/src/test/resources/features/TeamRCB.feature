@@ -1,12 +1,11 @@
 #Author: GokulNath
 Feature: Verify RCB Team
-
-  @Regression @Positive @DemoTest
+  @Regression @Positive @DemoTest @Foreign
   Scenario: Verify foreign player in team RCB
     Given The team RCB has submitted its team for an upcoming match
     Then verify the team has only 4 foreign players
 
-  @smoke @Regression @Negative @DemoTest
+  @smoke @Regression @Negative @DemoTest @wicket
   Scenario: Verify there is at least one wicket keeper
     Given The team RCB has submitted its team for an upcoming match
     Then verify that there is at least one wicket keeper
